@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static saros.stf.client.tester.SarosTester.ALICE;
 import static saros.stf.client.tester.SarosTester.BOB;
 import static saros.stf.client.tester.SarosTester.CARL;
+import static saros.stf.shared.Constants.SessionInvitationModality.CONCURRENTLY;
 
 import org.junit.After;
 import org.junit.Before;
@@ -56,6 +57,7 @@ public class ConcurrentEditingWith3UsersTest extends StfTestCase {
         "foo",
         "readme.txt",
         "\nVerbesserung des algorithmischen Kerns, Gleichzeitiges Editieren\n",
+        CONCURRENTLY,
         ALICE,
         CARL,
         BOB);
@@ -198,6 +200,7 @@ public class ConcurrentEditingWith3UsersTest extends StfTestCase {
         "foo",
         "readme.txt",
         "\nVerbesserung des algorithmischen Kerns, Gleichzeitiges Editieren\n",
+        CONCURRENTLY,
         ALICE,
         CARL,
         BOB);
