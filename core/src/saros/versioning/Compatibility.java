@@ -41,6 +41,17 @@ public enum Compatibility {
     public Compatibility invert() {
       return UNKNOWN;
     }
+  },
+
+  /**
+   * At least one of the versions contains a qualifiers and the complete version string does not
+   * match.
+   */
+  MISMATCHED_DEV_BUILD(4) {
+    @Override
+    public Compatibility invert() {
+      return MISMATCHED_DEV_BUILD;
+    }
   };
 
   private final int code;
