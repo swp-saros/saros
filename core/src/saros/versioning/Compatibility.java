@@ -26,6 +26,9 @@ public enum Compatibility {
    */
   MISMATCHED_DEV_BUILD,
 
+  /** The two versions specified different, incompatible Saros implementations. */
+  INCOMPATIBLE_IMPLEMENTATIONS,
+
   /** The compatibility could not be determined. */
   UNKNOWN
 }
