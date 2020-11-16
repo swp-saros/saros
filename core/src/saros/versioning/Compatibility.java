@@ -20,12 +20,12 @@ public enum Compatibility {
    */
   NEWER,
 
-  /** The compatibility could not be determined. */
-  UNKNOWN,
-
   /**
    * At least one of the versions contains a qualifiers and the complete version string does not
    * match.
    */
-  MISMATCHED_DEV_BUILD
+  MISMATCHED_DEV_BUILD,
+
+  /** The compatibility could not be determined. */
+  UNKNOWN
 }
