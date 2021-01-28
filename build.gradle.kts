@@ -32,6 +32,18 @@ subprojects {
     apply(plugin = "eclipse")
     apply(plugin = "java")
     apply(plugin = "pmd")
+    
+    /*
+     * Make log4j Configurations available for all sub-projects
+     */
+
+    // Why it looks like this: https://stackoverflow.com/questions/54329251/unresolved-reference-sourcesets-gradle-kotlin-dsl-in-another-file/62696714#62696714
+    project.the<SourceSetContainer>()["main"].resources.srcDirs += file("../log4j_config")
+//    java {
+//        sourceSets {
+//            main.resources.srcDirs += "../log4j_config"
+//        }
+//    }
 
     /*
      * Apply default plugins and IntelliJ module configuration
@@ -216,7 +228,7 @@ tasks {
         dependsOn(
                 subprojects.map { listOf(":${it.name}:cleanEclipseProject", ":${it.name}:cleanEclipseClasspath") }.flatten() +
                 subprojects.map { listOf(":${it.name}:eclipseProject", ":${it.name}:eclipseClasspath") }.flatten() +
-                listOf("generateLibAll", ":saros.eclipse:copyLogFiles")
+                listOf("generateLibAll")
         )
 
         group = "IDE"

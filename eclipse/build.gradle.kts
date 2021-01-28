@@ -65,8 +65,10 @@ tasks {
             include("LICENSE")
             include("CHANGELOG")
         }
-	    from(rootProject.file("saros_log4j2.xml"))
-	    from(rootProject.file("log4j2.xml"))
+        //FIXME this may not even be needed because the resources.srcDirs might
+        //FIXME get included automatically
+	    //from(file("saros_log4j2.xml"))
+	    //from(file("log4j2.xml"))
     }
 
     val testJar by registering(Jar::class) {
@@ -76,16 +78,6 @@ tasks {
 
     artifacts {
         add("testing", testJar)
-    }
-
-    /*
-     * Copy the log4j2 files into the eclipse project dir
-     * to make them available for PDE.
-     */
-    register("copyLogFiles", Copy::class) {
-      into("${project.projectDir}/")
-      from(rootProject.file("log4j2.xml"))
-      from(rootProject.file("saros_log4j2.xml"))
     }
 
     /* Eclipse release tasks
