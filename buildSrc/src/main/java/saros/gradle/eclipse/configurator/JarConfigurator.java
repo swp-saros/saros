@@ -1,6 +1,9 @@
 package saros.gradle.eclipse.configurator;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.file.CopySpec;
@@ -18,9 +21,12 @@ public class JarConfigurator {
   private static final String JAR_LIB_DESTINATION = "lib";
 
   private Project project;
+  private List<String> configs;
 
-  public JarConfigurator(Project project) {
+  public JarConfigurator(Project project, List<String> configs) {
     this.project = project;
+    this.configs = new ArrayList<>();
+    configs.add("releaseDep");
     project.getPluginManager().apply(JAVA_PLUGIN_ID);
   }
 
@@ -33,8 +39,10 @@ public class JarConfigurator {
     jarTask.manifest((Manifest mf) -> mf.from(manifestFile));
     SourceSetContainer sourceSets = project.getExtensions().getByType(SourceSetContainer.class);
     jarTask.from(sourceSets.getByName(JAVA_MAIN_SOURCE_SET_NAME).getOutput());
-    jarTask.into(
-        JAR_LIB_DESTINATION,
-        (CopySpec cs) -> cs.from(project.getConfigurations().getByName(RELEASE_CONFIG_NAME)));
+    for (String jarConfig : this.configs) {
+    	jarTask.into(
+    			JAR_LIB_DESTINATION,
+    	        (CopySpec cs) -> cs.from(project.getConfigurations().getByName(jarConfig)));
+    }
   }
 }

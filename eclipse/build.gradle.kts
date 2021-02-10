@@ -9,6 +9,10 @@ import com.diffplug.gradle.pde.EclipseRelease
 
 val versionQualifier = ext.get("versionQualifier") as String
 val eclipseVersionNr = ext.get("eclipseVersion") as String
+val commonsLang = ext.get("commons-lang3") as String
+val log4j2ApiVersion = ext.get("log4j2ApiVersion") as String
+val log4j2CoreVersion = ext.get("log4j2CoreVersion") as String
+val log4j2BridgeVersion = ext.get("log4j2BridgeVersion") as String
 
 configurations {
     val testConfig by getting {}
@@ -40,6 +44,10 @@ sourceSets {
 
 dependencies {
     implementation(project(":saros.core"))
+    implementation(log4j2ApiVersion)
+    implementation(log4j2CoreVersion)
+    implementation(log4j2BridgeVersion)
+    implementation(commonsLang)
     // This is a workaround for https://github.com/saros-project/saros/issues/1086
     implementation("org.eclipse.platform:org.eclipse.urischeme:1.1.0")
     // This is a workaround for https://github.com/saros-project/saros/issues/1114
