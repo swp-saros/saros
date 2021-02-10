@@ -148,6 +148,7 @@ subprojects {
 
 	projectToConf.extra["commons-lang3"] = "org.apache.commons:commons-lang3:3.8.1"
 
+
     projectToConf.extra["junitVersion"] = junitVersion
     projectToConf.extra["log4j2ApiVersion"] = log4j2Api
     projectToConf.extra["log4j2CoreVersion"] = log4j2Core

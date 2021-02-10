@@ -1,5 +1,6 @@
 plugins {
   id("saros.gradle.eclipse.plugin")
+  `java-library`
 }
 
 val versionQualifier = ext.get("versionQualifier") as String
@@ -10,27 +11,27 @@ val log4j2CoreVersion = ext.get("log4j2CoreVersion") as String
 val log4j2BridgeVersion = ext.get("log4j2BridgeVersion") as String
 
 configurations {
-	/*val bundle by getting {}
-	//val bundleApi by getting {}
-	//val api by getting {
-	//	extendsFrom(bundleApi)
-	//}
-	//val implementation by getting {
-	//	extendsFrom(bundle)
-	//}
+	val bundle by getting {}
+	val bundleApi by getting {}
+	val api by getting {
+		extendsFrom(bundleApi)
+	}
+	val implementation by getting {
+		extendsFrom(bundle)
+	}
 
     // Defined in root build.gradle
     val testConfig by getting {}
-    val releaseDep by getting {}
+    //val releaseDep by getting {}
 
     // Default configuration
-    val compile by getting {
-        extendsFrom(releaseDep)
-    }
+    //val compile by getting {
+    //    extendsFrom(releaseDep)
+    //}
     val testCompile by getting {
         extendsFrom(testConfig)
     }
-    //val compile by getting {}
+    val compile by getting {}
     val plain by creating {
         extendsFrom(compile)
     }
@@ -49,7 +50,7 @@ sarosEclipse {
 dependencies {
     bundle("commons-codec:commons-codec:1.3")
     bundle("commons-io:commons-io:2.0.1")
-    bundle("org.apache.commons:commons-lang3:3.8.1")
+    bundle(commonsLang)
 
     bundleApi("javax.jmdns:jmdns:3.4.1")
     bundleApi("xpp3:xpp3:1.1.4c")

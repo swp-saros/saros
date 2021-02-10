@@ -1,5 +1,6 @@
 plugins {
   id("saros.gradle.eclipse.plugin")
+  `java-library`
 }
 
 val versionQualifier = (ext.get("versionQualifier") ?: "") as String
@@ -35,7 +36,7 @@ dependencies {
     implementation("org.eclipse.platform:org.eclipse.ui.workbench:3.120.0")
     implementation(project(path = ":saros.eclipse", configuration = "testing"))
 
-    releaseDep(fileTree("libs"))
+    //releaseDep(fileTree("libs"))
     api(fileTree("libs"))
 }
 

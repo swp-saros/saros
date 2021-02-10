@@ -25,8 +25,7 @@ public class JarConfigurator {
 
   public JarConfigurator(Project project, List<String> configs) {
     this.project = project;
-    this.configs = new ArrayList<>();
-    configs.add("releaseDep");
+    this.configs = configs;
     project.getPluginManager().apply(JAVA_PLUGIN_ID);
   }
 
