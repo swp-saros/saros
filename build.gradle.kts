@@ -59,7 +59,7 @@ subprojects {
 		}
 			
 		create("bundleApi") { // contains all dependencies which has to be included into the release jar/zip
-			isTransitive = false // avoid that the whole dependency tree is released
+			isTransitive = true // avoid that the whole dependency tree is released
 		}
     }
 
