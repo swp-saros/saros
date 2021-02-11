@@ -35,9 +35,10 @@ configurations {
     val testCompile by getting {
         extendsFrom(testConfig)
     }
-    val compile by getting {}
+    //val compile by getting {}
     val plain by creating {
-        extendsFrom(compile)
+        extendsFrom(implementation)
+        extendsFrom(api)
     }
 }
 
