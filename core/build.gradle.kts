@@ -57,9 +57,9 @@ dependencies {
     bundleApi("com.thoughtworks.xstream:xstream:1.4.10")
     bundleApi("org.gnu.inet:libidn:1.15")
 
-    bundle(log4j2ApiVersion)
-    bundle(log4j2CoreVersion)
-    bundle(log4j2BridgeVersion)
+    bundleApi(log4j2ApiVersion)
+    bundleApi(log4j2CoreVersion)
+    bundleApi(log4j2BridgeVersion)
 
     // TODO: use real release. This version is a customized SNAPSHOT
     bundleApi(files("libs/weupnp.jar"))
