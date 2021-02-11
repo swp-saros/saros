@@ -23,6 +23,10 @@ configurations {
     // Defined in root build.gradle
     val testConfig by getting {}
     //val releaseDep by getting {}
+    val releaseDep by getting {
+    	extendsFrom(bundleApi)
+    	extendsFrom(bundle)
+    } 
 
     // Default configuration
     //val compile by getting {
