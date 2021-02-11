@@ -31,7 +31,7 @@ public class SarosEclipseExtension {
   private boolean addPdeNature = false;
   private boolean createBundleJar = false;
   private List<String> configs = new ArrayList<>();
-  
+
   public File getManifest() {
     return manifest;
   }
@@ -107,11 +107,11 @@ public class SarosEclipseExtension {
   public void setCreateBundleJar(boolean createBundleJar) {
     this.createBundleJar = createBundleJar;
   }
-  
+
   public List<String> getConfigs() {
     return configs;
   }
-  
+
   public void setConfigs(List<String> configs) {
     this.configs = configs;
   }
