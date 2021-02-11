@@ -24,8 +24,7 @@ configurations {
     val testConfig by getting {}
     //val releaseDep by getting {}
     val releaseDep by getting {
-    	extendsFrom(bundleApi)
-    	extendsFrom(bundle)
+    	extendsFrom(bundle, bundleApi)
     } 
 
     // Default configuration
@@ -35,10 +34,8 @@ configurations {
     val testCompile by getting {
         extendsFrom(testConfig)
     }
-    //val compile by getting {}
     val plain by creating {
-        extendsFrom(implementation)
-        extendsFrom(api)
+        extendsFrom(implementation, api)
     }
 }
 
