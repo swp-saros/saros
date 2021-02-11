@@ -11,20 +11,20 @@ val log4j2CoreVersion = ext.get("log4j2CoreVersion") as String
 val log4j2BridgeVersion = ext.get("log4j2BridgeVersion") as String
 
 configurations {
-	val bundle by getting {}
-	val bundleApi by getting {}
-	val api by getting {
-		extendsFrom(bundleApi)
-	}
-	val implementation by getting {
-		extendsFrom(bundle)
-	}
+    val bundle by getting {}
+    val bundleApi by getting {}
+    val api by getting {
+        extendsFrom(bundleApi)
+    }
+    val implementation by getting {
+        extendsFrom(bundle)
+    }
 
     // Defined in root build.gradle
     val testConfig by getting {}
     //val releaseDep by getting {}
     val releaseDep by getting {
-    	extendsFrom(bundle, bundleApi)
+        extendsFrom(bundle, bundleApi)
     } 
 
     // Default configuration
@@ -45,8 +45,8 @@ sarosEclipse {
     isAddPdeNature = true
     pluginVersionQualifier = versionQualifier
     configs = listOf(
-    	"bundle", "bundleApi"
-    	)
+        "bundle", "bundleApi"
+        )
 }
 
 dependencies {

@@ -109,10 +109,10 @@ public class SarosEclipseExtension {
   }
   
   public List<String> getConfigs() {
-	  return configs;
+    return configs;
   }
   
   public void setConfigs(List<String> configs) {
-	  this.configs = configs;
+    this.configs = configs;
   }
 }
