@@ -16,11 +16,8 @@ sarosEclipse {
 }
 
 configurations {
-    val bundle by getting {}
+	val bundle by getting {}
 	val bundleApi by getting {}
-	val implementation by getting {
-        extendsFrom(bundle)
-    }
 	//val releaseDep by getting {}
     val compile by getting {
         extendsFrom(bundle, bundleApi)
@@ -29,18 +26,19 @@ configurations {
 
 dependencies {
     if (junitVersion != null) {
-        implementation(junitVersion)
+        compile(junitVersion)
     }
-    implementation(project(":saros.core"))
-    implementation(project(":saros.eclipse"))
+    compile(project(":saros.core"))
+    compile(project(":saros.eclipse"))
     // This is a workaround for https://github.com/saros-project/saros/issues/1086
     implementation("org.eclipse.platform:org.eclipse.urischeme:1.1.0")
     // This is a workaround for https://github.com/saros-project/saros/issues/1114
     implementation("org.eclipse.platform:org.eclipse.ui.ide:3.17.200")
     implementation("org.eclipse.platform:org.eclipse.ui.workbench:3.120.0")
-    implementation(project(path = ":saros.eclipse", configuration = "testing"))
+    compile(project(path = ":saros.eclipse", configuration = "testing"))
 
-    compile(fileTree("libs"))
+    bundle(fileTree("libs"))
+	bundleApi(fileTree("libs"))
 }
 
 sourceSets {
