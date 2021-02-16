@@ -17,13 +17,14 @@ sarosEclipse {
 
 configurations {
     val bundle by getting {}
+	val bundleApi by getting {}
 	val implementation by getting {
         extendsFrom(bundle)
     }
 	//val releaseDep by getting {}
-    //val compile by getting {
-    //    extendsFrom(bundleApi)
-    //}
+    val compile by getting {
+        extendsFrom(bundle, bundleApi)
+    }
 }
 
 dependencies {
@@ -39,7 +40,7 @@ dependencies {
     implementation("org.eclipse.platform:org.eclipse.ui.workbench:3.120.0")
     implementation(project(path = ":saros.eclipse", configuration = "testing"))
 
-    bundleApi(fileTree("libs"))
+    compile(fileTree("libs"))
 }
 
 sourceSets {
