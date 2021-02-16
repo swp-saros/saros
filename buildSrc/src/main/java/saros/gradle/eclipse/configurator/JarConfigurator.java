@@ -14,7 +14,7 @@ public class JarConfigurator {
   private static final String JAVA_MAIN_SOURCE_SET_NAME = "main";
   private static final String JAVA_PLUGIN_ID = "java";
   private static final String JAR_TASK_NAME = "jar";
-  
+
   private static final String JAR_LIB_DESTINATION = "lib";
 
   private Project project;
