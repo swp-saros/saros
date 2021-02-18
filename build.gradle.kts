@@ -51,9 +51,9 @@ subprojects {
     configurations {
         create("testing") // used to reference the testJar
         create("testConfig") // contains test dependencies that are used by all java subprojects
-        create("releaseDep") { // contains all dependencies which has to be included into the release jar/zip
-            isTransitive = false // avoid that the whole dependency tree is released
-        }
+        //create("releaseDep") { // contains all dependencies which has to be included into the release jar/zip
+        //    isTransitive = false // avoid that the whole dependency tree is released
+        //}
         create("bundle") { // contains all dependencies which has to be included into the release jar/zip
             isTransitive = false // avoid that the whole dependency tree is released
         }

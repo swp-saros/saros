@@ -18,7 +18,7 @@ sarosEclipse {
 configurations {
 	val bundle by getting {}
 	val bundleApi by getting {}
-	val releaseDep by getting {}
+	//val releaseDep by getting {}
     val compile by getting {
 		//extendsFrom(releaseDep)
         extendsFrom(bundle, bundleApi)
@@ -40,7 +40,7 @@ dependencies {
 
     bundle(fileTree("libs"))
 	bundleApi(fileTree("libs"))
-	releaseDep(fileTree("libs"))
+	//releaseDep(fileTree("libs"))
 }
 
 sourceSets {
