@@ -73,9 +73,9 @@ public class SarosEclipsePlugin implements Plugin<Project> {
     if (e.isCreateBundleJar()) {
       methodRequiresManifest("create bundle jar", e);
       // new JarConfigurator(p).createBundleJar(e.getManifest());
-      List<String> defaultConfigs = new ArrayList<>();
-      defaultConfigs.add("releaseDep");
-      List<String> jarConfigs = e.getConfigs().isEmpty() ? defaultConfigs : e.getConfigs();
+      //List<String> defaultConfigs = new ArrayList<>();
+      //defaultConfigs.add("releaseDep");
+      List<String> jarConfigs = e.getConfigs();
       new JarConfigurator(p, jarConfigs).createBundleJar(e.getManifest());
     }
 
