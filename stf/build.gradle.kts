@@ -16,8 +16,8 @@ sarosEclipse {
 }
 
 configurations {
-	//val bundle by getting {}
-	//val bundleApi by getting {}
+	val bundle by getting {}
+	val bundleApi by getting {}
 	val releaseDep by getting {}
     val compile by getting {
 		//extendsFrom(releaseDep)
