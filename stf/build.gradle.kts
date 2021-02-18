@@ -41,7 +41,6 @@ dependencies {
     implementation("org.eclipse.platform:org.eclipse.ui.workbench:3.120.0")
     compile(project(path = ":saros.eclipse", configuration = "testing"))
 
-    bundle(fileTree("libs"))
 	bundleApi(fileTree("libs"))
 	//releaseDep(fileTree("libs"))
 }
