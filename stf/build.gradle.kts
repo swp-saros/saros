@@ -20,8 +20,8 @@ configurations {
 	//val bundleApi by getting {}
 	val releaseDep by getting {}
     val compile by getting {
-		extendsFrom(releaseDep)
-        //extendsFrom(bundle, bundleApi)
+		//extendsFrom(releaseDep)
+        extendsFrom(bundle, bundleApi)
     }
 }
 
