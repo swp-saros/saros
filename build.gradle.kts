@@ -115,7 +115,7 @@ subprojects {
          */
         register("generateLib", Copy::class) {
             into("${project.projectDir}/lib")
-            from(projectToConf.configurations.getByName("releaseDep"))
+            //from(projectToConf.configurations.getByName("releaseDep"))
             from(projectToConf.configurations.getByName("bundle"))
             from(projectToConf.configurations.getByName("bundleApi"))
         }
