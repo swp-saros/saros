@@ -54,10 +54,10 @@ subprojects {
         create("releaseDep") { // contains all dependencies which has to be included into the release jar/zip
             isTransitive = false // avoid that the whole dependency tree is released
         }
-		create("bundle") { // contains all which are used by core
+        create("bundle") { // contains all which are used by core
             isTransitive = false // avoid that the whole dependency tree is released
         }
-		create("bundleApi") { // contains all dependencies which are used by all java subprojects
+        create("bundleApi") { // contains all dependencies which are used by all java subprojects
             isTransitive = false // avoid that the whole dependency tree is released
         }
     }
