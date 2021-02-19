@@ -38,8 +38,8 @@ public class JarConfigurator {
     jarTask.from(sourceSets.getByName(JAVA_MAIN_SOURCE_SET_NAME).getOutput());
     for (String jarConfig : this.configs) {
       jarTask.into(
-        JAR_LIB_DESTINATION,
-        (CopySpec cs) -> cs.from(project.getConfigurations().getByName(jarConfig)));
+          JAR_LIB_DESTINATION,
+          (CopySpec cs) -> cs.from(project.getConfigurations().getByName(jarConfig)));
     }
   }
 }

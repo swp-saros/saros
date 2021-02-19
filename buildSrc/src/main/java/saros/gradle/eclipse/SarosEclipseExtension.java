@@ -107,11 +107,11 @@ public class SarosEclipseExtension {
   public void setCreateBundleJar(boolean createBundleJar) {
     this.createBundleJar = createBundleJar;
   }
-  
+
   public void setConfigs(List<String> configs) {
     this.configs = configs;
   }
-  
+
   public List<String> getConfigs() {
     return configs;
   }

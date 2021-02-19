@@ -1,7 +1,7 @@
 package saros.gradle.eclipse;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import org.gradle.api.GradleException;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
