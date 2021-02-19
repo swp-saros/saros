@@ -1,5 +1,7 @@
 package saros.gradle.eclipse;
 
+import java.util.List;
+import java.util.ArrayList;
 import org.gradle.api.GradleException;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
@@ -70,7 +72,10 @@ public class SarosEclipsePlugin implements Plugin<Project> {
 
     if (e.isCreateBundleJar()) {
       methodRequiresManifest("create bundle jar", e);
-      new JarConfigurator(p).createBundleJar(e.getManifest());
+      List<String> defaultConfigs = new ArrayList<>();
+      defaultConfigs.add("releaseDep");
+	  List<String> jarConfigs = e.getConfigs().isEmpty() ? defaultConfigs : e.getConfigs();
+	  new JarConfigurator(p, jarConfigs).createBundleJar(e.getManifest());
     }
 
     if (e.isAddDependencies()) {
