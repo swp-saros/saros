@@ -23,7 +23,7 @@ public class JarConfigurator {
 
   public JarConfigurator(Project project, List<String> configs) {
     this.project = project;
-	this.configs = configs;
+    this.configs = configs;
     project.getPluginManager().apply(JAVA_PLUGIN_ID);
   }
 
