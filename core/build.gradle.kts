@@ -45,7 +45,7 @@ dependencies {
 
     bundleApi("javax.jmdns:jmdns:3.4.1")
     bundleApi("xpp3:xpp3:1.1.4c")
-    bundleApi("com.thoughtworks.xstream:xstream:1.4.10")
+    bundle("com.thoughtworks.xstream:xstream:1.4.10")
     bundle("org.gnu.inet:libidn:1.15")
 
     bundleApi(log4j2ApiVersion)
