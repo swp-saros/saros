@@ -14,14 +14,12 @@ sarosEclipse {
     isAddDependencies = true
     pluginVersionQualifier = versionQualifier
     eclipseVersion = eclipseVersionNr
-    configs = listOf("bundle", "bundleApi")
 }
 
 configurations {
-    val bundle by getting {}
     val bundleApi by getting {}
     val api by getting {
-        extendsFrom(bundle, bundleApi)
+        extendsFrom(bundleApi)
     }
 }
 

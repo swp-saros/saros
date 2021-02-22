@@ -36,7 +36,6 @@ sarosEclipse {
     isCreateBundleJar = true
     isAddPdeNature = true
     pluginVersionQualifier = versionQualifier
-    configs = listOf("bundle", "bundleApi")
 }
 
 dependencies {
