@@ -115,7 +115,7 @@ public class SarosEclipseExtension {
   public List<String> getConfigs() {
     return configs;
   }
-  
+
   /**
    * Get the list of (gradle) configurations or a given default if the list of configurations is
    * empty.
