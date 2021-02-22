@@ -115,4 +115,15 @@ public class SarosEclipseExtension {
   public List<String> getConfigs() {
     return configs;
   }
+  
+  /**
+   * Get the list of (gradle) configurations or a given default if the list of configurations is
+   * empty.
+   *
+   * @param defaultConfigs The list of (gradle) configurations to be returned when an empty
+   *     configurations-list is given.
+   */
+  public List<String> getConfigs(List<String> defaultConfigs) {
+    return configs.isEmpty() ? defaultConfigs : configs;
+  }
 }
