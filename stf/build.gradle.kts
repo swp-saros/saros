@@ -1,6 +1,5 @@
 plugins {
   id("saros.gradle.eclipse.plugin")
-  `java-library`
 }
 
 val versionQualifier = (ext.get("versionQualifier") ?: "") as String
@@ -18,25 +17,25 @@ sarosEclipse {
 
 configurations {
     val bundleApi by getting {}
-    val api by getting {
+    val compile by getting {
         extendsFrom(bundleApi)
     }
 }
 
 dependencies {
     if (junitVersion != null) {
-        api(junitVersion)
+        compile(junitVersion)
     }
-    api(project(":saros.core"))
-    api(project(":saros.eclipse"))
+    compile(project(":saros.core"))
+    compile(project(":saros.eclipse"))
     // This is a workaround for https://github.com/saros-project/saros/issues/1086
     implementation("org.eclipse.platform:org.eclipse.urischeme:1.1.0")
     // This is a workaround for https://github.com/saros-project/saros/issues/1114
     implementation("org.eclipse.platform:org.eclipse.ui.ide:3.17.200")
     implementation("org.eclipse.platform:org.eclipse.ui.workbench:3.120.0")
-    api(project(path = ":saros.eclipse", configuration = "testing"))
+    compile(project(path = ":saros.eclipse", configuration = "testing"))
 
-    api(fileTree("libs"))
+    bundleApi(fileTree("libs"))
 }
 
 sourceSets {
