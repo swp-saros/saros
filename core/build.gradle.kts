@@ -43,8 +43,8 @@ dependencies {
     bundleApi("commons-io:commons-io:2.0.1")
     bundleApi(commonsLang)
 
-    bundleApi("javax.jmdns:jmdns:3.4.1")
-    bundleApi("xpp3:xpp3:1.1.4c")
+    bundle("javax.jmdns:jmdns:3.4.1")
+    bundle("xpp3:xpp3:1.1.4c")
     bundle("com.thoughtworks.xstream:xstream:1.4.10")
     bundle("org.gnu.inet:libidn:1.15")
 
