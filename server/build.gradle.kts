@@ -10,6 +10,7 @@ configurations {
 dependencies {
     compile(project(":saros.core"))
     compile("org.apache.commons:commons-collections4:4.2")
+    implementation("commons-io:commons-io:2.0.1")
 }
 
 sourceSets {

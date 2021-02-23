@@ -40,7 +40,6 @@ sarosEclipse {
 
 dependencies {
     bundle("commons-codec:commons-codec:1.3")
-    bundleApi("commons-io:commons-io:2.0.1")
     bundleApi(commonsLang)
 
     bundle("javax.jmdns:jmdns:3.4.1")
