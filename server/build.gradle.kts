@@ -1,5 +1,7 @@
 val versionQualifier = ext.get("versionQualifier")
 
+val commonsIO = ext.get("commons-io2") as String
+
 configurations {
     val testConfig by getting {}
     val testCompile by getting {
@@ -10,7 +12,7 @@ configurations {
 dependencies {
     compile(project(":saros.core"))
     compile("org.apache.commons:commons-collections4:4.2")
-    implementation("commons-io:commons-io:2.0.1")
+    implementation(commonsIO)
 }
 
 sourceSets {
