@@ -50,6 +50,7 @@ dependencies {
     bundleApi(log4j2ApiVersion)
     bundleApi(log4j2CoreVersion)
     bundleApi(log4j2BridgeVersion)
+    implementation("commons-io:commons-io:2.0.1")
 
     // TODO: use real release. This version is a customized SNAPSHOT
     bundleApi(files("libs/weupnp.jar"))
