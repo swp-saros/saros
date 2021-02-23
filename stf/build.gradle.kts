@@ -1,10 +1,12 @@
 plugins {
   id("saros.gradle.eclipse.plugin")
+  `java-library`
 }
 
 val versionQualifier = (ext.get("versionQualifier") ?: "") as String
 val eclipseVersionNr = ext.get("eclipseVersion") as String
 val junitVersion = ext.get("junitVersion")
+val commonsLang = ext.get("commons-lang3") as String
 
 sarosEclipse {
     manifest = file("META-INF/MANIFEST.MF")
@@ -34,6 +36,7 @@ dependencies {
     implementation("org.eclipse.platform:org.eclipse.ui.ide:3.17.200")
     implementation("org.eclipse.platform:org.eclipse.ui.workbench:3.120.0")
     compile(project(path = ":saros.eclipse", configuration = "testing"))
+	api(commonsLang)
 
     bundleApi(fileTree("libs"))
 }
